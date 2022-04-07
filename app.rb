@@ -27,6 +27,14 @@ class Battle < Sinatra::Base
     @player1 = session[:player1]
     @player2 = session[:player2]
     erb(:play)
+   #if params[:attack] != nil
+   #  "You attacked Superman!" 
+   #end
+  end
+
+  get '/attack' do
+    @player2 = session[:player2]
+    erb(:attack)
   end
 
   run! if app_file == $0
