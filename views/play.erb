@@ -1,6 +1,6 @@
-<p><%= $player1 %> vs. <%= $player2 %>!!!</p>
+<p><%= $player1.name %> vs. <%= $player2.name %>!!!</p>
 
-<p><%= $player2 %> Hit Points: 100 HP</p>
+<p><%= $player2.name %> Hit Points: <%= $player2.hit_points %> HPs</p>
 
 <form action='/attack' method='get'>
   <input type='submit' value='Attack' >
