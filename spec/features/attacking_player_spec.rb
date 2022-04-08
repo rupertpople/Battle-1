@@ -7,6 +7,10 @@
 # So I can play a suspenseful game of Battle,
 # I want all Attacks to deal a random amount of damage
 
+# As a Player,
+# So I can enjoy a game of Battle with more variety,
+# I want to choose from a range of attacks I could make
+
 require_relative '../../lib/game.rb'
 
 feature "Attack Player" do
@@ -26,4 +30,19 @@ feature "Attack Player" do
     expect(page).to have_content 'Superman attacked Megasaur! BAM!'
   end
 
+  scenario 'Player 1 chooses to punch' do
+    sign_in_and_play
+    expect(page).to have_content 'Punch'
+  end
+
+  scenario 'Player 1 chooses to kick' do
+    sign_in_and_play
+    expect(page).to have_content 'Kick'
+  end
+
+  scenario 'Player 1 chooses to throw a rock' do
+    sign_in_and_play
+    expect(page).to have_content 'Throw rock'
+  end
+  
 end
