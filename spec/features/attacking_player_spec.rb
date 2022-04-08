@@ -11,6 +11,10 @@
 # So I can enjoy a game of Battle with more variety,
 # I want to choose from a range of attacks I could make
 
+# As a Player,
+# So I can better enjoy a game of Battle,
+# I want some of my attacks to Paralyse an opponent (chance of losing their next attack)
+
 require_relative '../../lib/game.rb'
 
 feature "Attack Player" do
@@ -32,17 +36,17 @@ feature "Attack Player" do
 
   scenario 'Player 1 chooses to punch' do
     sign_in_and_play
-    expect(page).to have_content 'Punch'
+    expect(page).to have_button 'Punch'
   end
 
   scenario 'Player 1 chooses to kick' do
     sign_in_and_play
-    expect(page).to have_content 'Kick'
+    expect(page).to have_button 'Kick'
   end
 
   scenario 'Player 1 chooses to throw a rock' do
     sign_in_and_play
-    expect(page).to have_content 'Throw rock'
+    expect(page).to have_button 'Throw rock'
   end
   
 end

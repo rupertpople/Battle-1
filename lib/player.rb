@@ -1,10 +1,11 @@
 class Player
     
-    attr_accessor :hit_points, :name
+    attr_accessor :hit_points, :name, :paralysed
 
     def initialize(name)
         @name = name
         @hit_points = 100
+        @paralysed = false
     end
 
     def take_damage
@@ -13,6 +14,10 @@ class Player
 
     def damage_taken
         rand(1..20)
+    end
+
+    def paralysed
+        @paralysed = true
     end
 
 end

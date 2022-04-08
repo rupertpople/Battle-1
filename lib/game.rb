@@ -8,8 +8,18 @@ class Game
     end
     
     def attack(attacked_player)
+        if paralysed? == false
+          attacked_player.take_damage
+          "You attacked #{attacked_player.name}! BAM!"
+        elsif paralysed? == true
+          "You were paralysed and did not attack"
+        end
+    end
+
+    def punch(attacked_player)
         attacked_player.take_damage
-        "You attacked #{attacked_player.name}! BAM!"
+        attacked_player.paralysed
+        "You punched #{attacked_player.name}, #{attacked_player.name} has been paralysed!"
     end
 
     def change_turn
@@ -28,4 +38,11 @@ class Game
         end
     end
 
+    def paralysed?
+        if @attacking_player.paralysed == true
+            rand(1) > 0 ? true : false
+        else
+            false
+        end
+    end
 end

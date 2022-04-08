@@ -10,6 +10,11 @@ describe Player do
         expect(player.hit_points).to eq 100
     end
 
+    it 'player can be paralysed by enemy punch' do
+        allow(player).to receive(:paralysed).and_return(true)
+        expect(player.paralysed).to eq(true)
+    end
+
     describe "#take_damage" do
       it 'should take a random amount of damage between 0 and 20' do
         allow(player).to receive(:damage_taken).and_return(20)

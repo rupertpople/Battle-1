@@ -37,6 +37,12 @@ class Battle < Sinatra::Base
     erb(:attack)
   end
 
+  get '/punch' do
+    @game = $game
+    @game.punch(@game.defending_player)
+    erb(:punch)
+  end
+
   run! if app_file == $0
 end
 

@@ -1,0 +1,10 @@
+<p><%= @game.attacking_player.name %> punched <%= @game.defending_player.name %>! BAM!</p>
+<p> <%= @game.defending_player.name %> has been paralysed! </p>
+
+<% if @game.player1.hit_points <= 0 || @game.player2.hit_points <= 0 %>
+<p> <%= @game.defending_player.name %>, you have lost! <p>
+<% end %>
+
+<form action='/play' method='get'>
+  <input type='submit' value='Continue' >
+</form>
