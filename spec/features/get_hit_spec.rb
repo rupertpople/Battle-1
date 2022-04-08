@@ -8,6 +8,6 @@ feature 'Implement Hit Points' do
     sign_in_and_play
     click_on('Attack')
     click_on('Continue')
-    expect(page).to have_content "Superman Hit Points: 90 HP"
+    expect(page).to_not have_content "Superman Hit Points: 100 HP"
   end
 end

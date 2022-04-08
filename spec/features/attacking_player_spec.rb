@@ -3,6 +3,12 @@
 # So I can win a game of Battle,
 # I want to attack Player 2, and I want to get a confirmation
 
+# As a Player,
+# So I can play a suspenseful game of Battle,
+# I want all Attacks to deal a random amount of damage
+
+require_relative '../../lib/game.rb'
+
 feature "Attack Player" do
   scenario "Player 1 attacks Player 2" do
     sign_in_and_play
@@ -19,4 +25,5 @@ feature "Attack Player" do
     click_button('Attack')
     expect(page).to have_content 'Superman attacked Megasaur! BAM!'
   end
+
 end
