@@ -7,4 +7,9 @@ feature "View Player Hit Points" do
     sign_in_and_play
     expect(page).to have_content 'Superman Hit Points: 100 HP'
   end
+
+  scenario "Player 1 can see his own HP" do
+    sign_in_and_play
+    expect(page).to have_content 'Megasaur Hit Points: 100 HP'
+  end
 end

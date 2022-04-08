@@ -1,4 +1,4 @@
-<p>You attacked <%= @game.player2.name %>! BAM!</p>
+<p><%= @game.attacking_player.name %> attacked <%= @game.defending_player.name %>! BAM!</p>
 
 <form action='/play' method='get'>
   <input type='submit' value='Continue' >

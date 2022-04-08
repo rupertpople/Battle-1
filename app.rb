@@ -27,16 +27,16 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
-    @player2_hp = @game.player2.hit_points
+    @game.change_turn
     erb(:play)
   end
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player2)
+    @game.attack(@game.defending_player)
     erb(:attack)
   end
 
   run! if app_file == $0
-
 end
+
